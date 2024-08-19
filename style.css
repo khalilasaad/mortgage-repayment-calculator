@@ -1,0 +1,276 @@
+@import url(https://fonts.google.com/specimen/Plus+Jakarta+Sans);
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+small {
+	color: #666;
+}
+
+input {
+	border: none;
+}
+
+body {
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	background-color: hsl(202, 86%, 94%);
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-container {
+	background-color: #fff;
+	border-radius: 20px;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+	display: flex;
+}
+
+.calc-container {
+	width: 50%;
+	height: 100%;
+	padding: 30px 30px;
+}
+
+form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.calc-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.semi-container {
+	height: 67px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.input {
+	border: 1px solid #777;
+	border-radius: 5px;
+	display: flex;
+	height: 40px;
+}
+
+.input label {
+	background-color: hsl(202, 86%, 94%);
+	padding: 10px 10px;
+	border-radius: 5px;
+	color: #777;
+	font-weight: bold;
+}
+
+.input input {
+	width: 100%;
+	border-radius: 5px;
+	margin: 0 1px;
+	padding: 0 7px;
+}
+
+.details {
+	display: flex;
+	justify-content: space-between;
+}
+
+.details .input {
+	width: 152px;
+}
+
+.custom-radio {
+	border: #777 1px solid;
+	border-radius: 5px;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	margin-top: 7px;
+	font-weight: bold;
+	color: hsl(202, 55%, 16%);
+	padding-left: 15px;
+	cursor: pointer;
+}
+
+.custom-radio input[type='radio'] {
+	display: none;
+}
+
+.checkmark {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid #ccc;
+	position: relative;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.checkmark::after {
+	content: '';
+	width: 11px;
+	height: 11px;
+	background-color: hsl(61, 70%, 52%);
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.custom-radio input[type='radio']:checked + .checkmark::after {
+	opacity: 1;
+}
+
+.custom-radio input[type='radio']:checked + .checkmark {
+	border-color: hsl(61, 70%, 52%);
+}
+
+button {
+	background-color: hsl(61, 70%, 52%);
+	color: hsl(202, 55%, 16%);
+	font-weight: bold;
+	padding: 10px 20px;
+	max-width: fit-content;
+	border: none;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+}
+
+button img {
+	height: 15px;
+	margin: 3px 7px 0 0;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+input:focus {
+	outline: none;
+}
+
+.res-container {
+	border: #666 1px solid;
+	background-color: hsl(202, 55%, 16%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	border-radius: 0 20px 20px 50px;
+}
+
+.res-container h3 {
+	color: #f2f2f2;
+	margin: 15px 0;
+}
+
+.res-container p {
+	color: hsl(203, 41%, 72%);
+	margin: 0 15px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.attribution {
+	background-color: #333;
+	color: #fff;
+	font-size: 11px;
+	text-align: center;
+	width: 100%;
+	padding: 10px 0;
+	position: absolute;
+	bottom: 0;
+}
+
+.attribution a {
+	color: hsl(200, 26%, 54%);
+	text-decoration: none;
+}
+
+.attribution a:hover {
+	color: hsl(203, 41%, 72%);
+}
+
+@media (max-width: 768px) {
+	.main-container {
+		flex-direction: column;
+		height: 100vh;
+		width: 384px;
+	}
+	.calc-container {
+		width: 100%;
+		height: 50%;
+	}
+	.details {
+		flex-direction: column;
+	}
+	.details .input {
+		width: 100%;
+	}
+	.res-container {
+		width: 100%;
+		height: 50%;
+		border-radius: 0;
+	}
+}
+
+@media (max-width: 375px) {
+	.main-container {
+		width: 100vw;
+	}
+}
+
+.checked {
+	border-color: hsl(61, 70%, 52%);
+	background-color: hsl(62, 67%, 90%);
+}
+
+.result-container {
+	border-top: hsl(61, 70%, 52%) 4px solid;
+	border-radius: 10px;
+	background-color: hsl(201, 66%, 9%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	margin-top: 40px;
+}
+
+.res {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	width: 90%;
+	padding: 20px 0;
+}
+
+.res h2 {
+	margin: 10px 0 0 15px;
+	color: #fff;
+}
+
+.res h1 {
+	color: hsl(61, 70%, 52%);
+	margin: 10px 0 0 15px;
+}
+
+.res:first-of-type {
+	border-bottom: hsl(203, 41%, 72%) 1px solid;
+}
